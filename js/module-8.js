@@ -4,6 +4,10 @@ function typing(letter) {
     for (let i = 0; i < buttons.length; i++) {
         if (buttons[i].innerHTML === letter) {
             playSound(buttons[i].getAttribute("data-note"));
+            buttons[i].className = "keyboard__btn--active";
+            setTimeout(() => {
+                buttons[i].classList.remove("keyboard__btn--active");
+            }, 300);
         }
     }
 
